@@ -11,12 +11,13 @@ jobs:
         run: |
           ls -la ${{ github.workspace }}
       - name: Run arbitrary R function
-          uses: actions/checkout@v3
-          uses: r-lib/actions/setup-r@v2
-          with:
-            r-version: '3.5.3' # The R version to download (if necessary) and use.
-          run: Rscript -e 'print("hello")'
-          
+        uses: actions/checkout@v3
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '3.5.3' # The R version to download (if necessary) and use.
+        run: |
+          Rscript -e 'print("hello")'
+
         # - name: Commit the results
         #   run: |
         #     git config --local user.name "robot"
